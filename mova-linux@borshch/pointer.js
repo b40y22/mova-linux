@@ -23,8 +23,8 @@ export class Pointer {
 
     _emit() {
         try {
-            const [x, y] = this._tracker.get_pointer();
-            this._onMove(x, y);
+            const p = this._tracker.get_pointer();
+            this._onMove(p.x, p.y);
         } catch (e) {
             console.error(`[mova-linux] pointer: ${e}`);
         }

@@ -15,3 +15,4 @@
 - `Meta.CursorTracker` (перевірено через gjs): сигнали `cursor-changed`, `position-invalidated`, `visibility-changed`; методи `get_pointer`, `get_pointer_visible`
 - JS gnome-shell на цій системі не витягується з бінарника — читати вихідники з gitlab тегу 46.0
 - ⚠️ `global.backend.get_cursor_tracker()` у 46 **не існує** (TypeError). Правильно: `Meta.CursorTracker.get_for_display(global.display)` (так робить screenshot.js 46.0)
+- ⚠️ `CursorTracker.get_pointer()` у 46 (gjs) повертає `Graphene.Point` (`p.x`, `p.y`), а не `[x, y]` — деструктуризація дає сміття
