@@ -28,6 +28,19 @@ To add a flag for another layout, drop `<layout-id>.svg` (3:2) into `mova-linux@
 
 See `NOTES.md` for verified GNOME Shell 46 API details and pitfalls.
 
+## Releasing
+
+`packaging/release.sh` builds the `.deb`, tags the commit, pushes to every git remote and publishes a release with the package attached (GitHub and Forgejo).
+
+```sh
+export GITHUB_TOKEN=...    # fine-grained token, Contents: write
+export FORGEJO_TOKEN=...   # Settings -> Applications, write:repository
+./packaging/release.sh 0.2.0 --dry-run   # show the steps, change nothing
+./packaging/release.sh 0.2.0
+```
+
+It refuses to run unless the version is `X.Y.Z`, the working tree is clean, the branch is `master` and the tag does not exist yet. A platform whose token is unset is skipped. Requires `curl` and `jq`.
+
 ## Authors
 
 - Borshch
