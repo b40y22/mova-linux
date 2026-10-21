@@ -1,4 +1,6 @@
 // Layer 2: pointer position. Cursor tracker signal, no idle timers.
+import Meta from 'gi://Meta';
+
 export class Pointer {
     constructor(onMove) {
         this._onMove = onMove;
@@ -7,7 +9,7 @@ export class Pointer {
     }
 
     enable() {
-        this._tracker = global.backend.get_cursor_tracker();
+        this._tracker = Meta.CursorTracker.get_for_display(global.display);
         this._handlerId = this._tracker.connect('position-invalidated', () => this._emit());
         this._emit();
     }

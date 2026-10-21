@@ -14,3 +14,4 @@
 - `InputSource`: `.type`, `.id`, `.shortName` (дублікати shortName отримують підрядковий індекс)
 - `Meta.CursorTracker` (перевірено через gjs): сигнали `cursor-changed`, `position-invalidated`, `visibility-changed`; методи `get_pointer`, `get_pointer_visible`
 - JS gnome-shell на цій системі не витягується з бінарника — читати вихідники з gitlab тегу 46.0
+- ⚠️ `global.backend.get_cursor_tracker()` у 46 **не існує** (TypeError). Правильно: `Meta.CursorTracker.get_for_display(global.display)` (так робить screenshot.js 46.0)
