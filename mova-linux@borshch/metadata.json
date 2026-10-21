@@ -1,0 +1,7 @@
+{
+  "uuid": "mova-linux@borshch",
+  "name": "mova-linux",
+  "description": "Shows the current input language next to the mouse pointer.",
+  "shell-version": ["46"],
+  "version": 1
+}
