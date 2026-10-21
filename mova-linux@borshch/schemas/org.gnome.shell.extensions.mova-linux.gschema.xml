@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <enum id="org.gnome.shell.extensions.mova-linux.DisplayMode">
+    <value nick="text" value="0"/>
+    <value nick="flag" value="1"/>
+  </enum>
+  <schema id="org.gnome.shell.extensions.mova-linux" path="/org/gnome/shell/extensions/mova-linux/">
+    <key name="display-mode" enum="org.gnome.shell.extensions.mova-linux.DisplayMode">
+      <default>'text'</default>
+      <summary>Badge content</summary>
+      <description>Show the language letters or a flag next to the pointer.</description>
+    </key>
+  </schema>
+</schemalist>
